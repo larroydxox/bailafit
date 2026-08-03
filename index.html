@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Mujer Ligera VIP — Tu espacio femenino de transformación</title>
+<meta name="description" content="Únete al Club Mujer Ligera VIP: comunidad femenina, clases en vivo, dieta ligera acompañada y check-ins semanales para adelgazar sin sentirte sola.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#ff5c93;
+    --pink-dark:#d63d73;
+    --purple:#7a2e5c;
+    --purple-deep:#3d1330;
+    --gold:#f0c36d;
+    --cream:#fff6f2;
+    --text-dark:#3a1b2c;
+    --text-soft:#6d4a5c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:var(--text-dark);
+    background:var(--cream);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;display:block;}
+  h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.25;}
+  .container{max-width:1080px;margin:0 auto;padding:0 20px;}
+  a{text-decoration:none;color:inherit;}
+
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,0.18);
+    border:1px solid rgba(255,255,255,0.4);
+    color:#fff;
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.3px;
+    backdrop-filter:blur(4px);
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:radial-gradient(circle at 20% 20%, #ff86ad 0%, transparent 45%),
+               radial-gradient(circle at 85% 10%, #ffd98f 0%, transparent 40%),
+               linear-gradient(160deg, var(--purple-deep) 0%, var(--purple) 45%, var(--pink-dark) 100%);
+    color:#fff;
+    padding:64px 0 72px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><circle cx="20" cy="20" r="1.4" fill="white" opacity="0.25"/><circle cx="90" cy="60" r="1" fill="white" opacity="0.2"/><circle cx="150" cy="30" r="1.6" fill="white" opacity="0.2"/><circle cx="170" cy="140" r="1.2" fill="white" opacity="0.25"/><circle cx="50" cy="150" r="1" fill="white" opacity="0.2"/></svg>');
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 20px;}
+  .hero h1{
+    font-size:clamp(28px,5vw,44px);
+    margin:22px 0 18px;
+    font-weight:700;
+  }
+  .hero h1 span{color:var(--gold);}
+  .hero p{
+    font-size:clamp(15px,2.4vw,18px);
+    color:rgba(255,255,255,0.92);
+    max-width:640px;
+    margin:0 auto 14px;
+    line-height:1.65;
+  }
+  .hero .highlight{
+    font-weight:600;
+    color:#fff;
+    font-size:clamp(16px,2.6vw,19px);
+    margin:26px auto 6px;
+  }
+
+  .cta-btn{
+    display:inline-block;
+    background:linear-gradient(135deg, var(--gold), #ffb44f);
+    color:var(--purple-deep);
+    font-weight:700;
+    font-size:clamp(16px,2.6vw,19px);
+    padding:18px 34px;
+    border-radius:999px;
+    box-shadow:0 12px 28px rgba(240,195,109,0.4), 0 4px 10px rgba(0,0,0,0.15);
+    transition:transform .18s ease, box-shadow .18s ease;
+    border:none;
+    cursor:pointer;
+  }
+  .cta-btn:hover{
+    transform:translateY(-3px) scale(1.02);
+    box-shadow:0 16px 34px rgba(240,195,109,0.5), 0 6px 14px rgba(0,0,0,0.18);
+  }
+  .cta-wrap{margin:34px 0 18px;}
+
+  .trust-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:22px;
+    margin-top:10px;
+    font-size:14px;
+    color:rgba(255,255,255,0.85);
+    font-weight:500;
+  }
+  .trust-row span{display:inline-flex;align-items:center;gap:6px;}
+
+  /* SECTION SHARED */
+  section{padding:70px 0;}
+  .section-title{
+    text-align:center;
+    font-size:clamp(24px,4vw,34px);
+    color:var(--purple-deep);
+    margin-bottom:12px;
+  }
+  .section-sub{
+    text-align:center;
+    color:var(--text-soft);
+    max-width:600px;
+    margin:0 auto 46px;
+    font-size:15.5px;
+    line-height:1.6;
+  }
+
+  /* BENEFITS GRID */
+  .benefits{background:#fff;}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:24px;
+  }
+  .card{
+    background:linear-gradient(160deg, #fff 0%, #fff2f6 100%);
+    border:1px solid #ffe0eb;
+    border-radius:18px;
+    padding:30px 24px;
+    text-align:left;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 30px rgba(255,92,147,0.18);
+  }
+  .card .emoji{
+    font-size:34px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:60px;height:60px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#ffe0eb,#ffd3e0);
+    margin-bottom:16px;
+  }
+  .card h3{
+    font-size:19px;
+    color:var(--purple-deep);
+    margin-bottom:8px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+  }
+  .card p{
+    font-size:14.5px;
+    color:var(--text-soft);
+    line-height:1.6;
+  }
+
+  /* DESERVE SECTION */
+  .deserve{
+    background:linear-gradient(160deg, var(--purple-deep), var(--purple));
+    color:#fff;
+  }
+  .deserve .container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+  }
+  .deserve h2{color:#fff;text-align:left;font-size:clamp(24px,4vw,32px);margin-bottom:18px;}
+  .deserve > .container > div:first-child p{
+    color:rgba(255,255,255,0.85);
+    font-size:15.5px;
+    line-height:1.7;
+  }
+  .checklist{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:20px;
+    padding:32px;
+  }
+  .checklist h3{
+    font-family:'Poppins',sans-serif;
+    font-size:17px;
+    color:var(--gold);
+    margin-bottom:18px;
+    font-weight:600;
+    letter-spacing:.3px;
+    text-transform:uppercase;
+  }
+  .checklist ul{list-style:none;}
+  .checklist li{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    font-size:15px;
+    line-height:1.55;
+    color:rgba(255,255,255,0.92);
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist li .check{
+    flex:0 0 auto;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--purple-deep);
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;
+    margin-top:1px;
+  }
+
+  /* COMPARISON */
+  .compare{background:#fff;}
+  .compare-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .compare-card{
+    border-radius:20px;
+    padding:34px 28px;
+  }
+  .compare-card.bad{
+    background:#faf4f4;
+    border:1px solid #ecdcdc;
+  }
+  .compare-card.good{
+    background:linear-gradient(160deg,#fff2f6,#ffe3ee);
+    border:2px solid var(--pink);
+    position:relative;
+    box-shadow:0 14px 30px rgba(255,92,147,0.18);
+  }
+  .compare-card h3{
+    font-family:'Poppins',sans-serif;
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:14px;
+    letter-spacing:.3px;
+  }
+  .compare-card.bad h3{color:#8a5a5a;}
+  .compare-card.good h3{color:var(--pink-dark);}
+  .compare-card p{
+    font-size:14.5px;
+    line-height:1.7;
+    color:var(--text-soft);
+  }
+
+  /* FINAL CTA */
+  .final-cta{
+    background:radial-gradient(circle at 15% 15%, #ff8fb0 0%, transparent 45%),
+               radial-gradient(circle at 85% 85%, #ffdb9b 0%, transparent 40%),
+               linear-gradient(160deg, var(--pink-dark), var(--purple-deep));
+    color:#fff;
+    text-align:center;
+  }
+  .price-tag{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.35);
+    padding:8px 20px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:13.5px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+    color:var(--gold);
+  }
+  .final-cta h2{color:#fff;font-size:clamp(24px,4.2vw,36px);margin-bottom:16px;}
+  .final-cta p{
+    max-width:600px;
+    margin:0 auto 30px;
+    color:rgba(255,255,255,0.9);
+    font-size:15.5px;
+    line-height:1.7;
+  }
+
+  footer{
+    background:var(--purple-deep);
+    color:rgba(255,255,255,0.55);
+    text-align:center;
+    padding:28px 20px 100px;
+    font-size:12.5px;
+    line-height:1.7;
+  }
+
+  /* STICKY MOBILE CTA */
+  .sticky-cta{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    background:linear-gradient(135deg, var(--pink-dark), var(--purple));
+    padding:12px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+    box-shadow:0 -6px 20px rgba(0,0,0,0.25);
+  }
+  .sticky-cta a{
+    background:linear-gradient(135deg, var(--gold), #ffb44f);
+    color:var(--purple-deep);
+    font-weight:700;
+    font-size:15px;
+    padding:13px 24px;
+    border-radius:999px;
+    width:100%;
+    max-width:420px;
+    text-align:center;
+  }
+
+  @media (max-width:820px){
+    .deserve .container{grid-template-columns:1fr;}
+    .deserve h2{text-align:center;}
+    .deserve > .container > div:first-child{text-align:center;}
+    .compare-grid{grid-template-columns:1fr;}
+  }
+  @media (min-width:821px){
+    .sticky-cta{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="badge">💖 Un espacio femenino, acogedor y VIP</span>
+    <h1>Has sido invitada al <span>Club Mujer Ligera VIP</span></h1>
+    <p>Un espacio reservado para mujeres que quieren adelgazar con ligereza, volver a sentirse bonitas, acompañadas y cuidadas durante su transformación.</p>
+    <p class="highlight">Aquí no te vas a sentir sola.</p>
+    <p>Vas a tener a otras mujeres animándote, clases en vivo, acompañamiento, motivación y una rutina femenina creada para que te sientas ligera, cuidada y especial.</p>
+
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://checkout.payt.com.br" target="_blank" rel="noopener">Quiero formar parte del Club VIP →</a>
+    </div>
+
+    <div class="trust-row">
+      <span>🔒 Compra segura</span>
+      <span>✅ Acceso inmediato</span>
+      <span>💖 Comunidad VIP</span>
+    </div>
+  </div>
+</header>
+
+<section class="benefits">
+  <div class="container">
+    <h2 class="section-title">Dentro del club encuentras apoyo de verdad</h2>
+    <p class="section-sub">Todo lo que necesitas para no caminar sola en tu transformación.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="emoji">👭</div>
+        <h3>Grupo VIP femenino</h3>
+        <p>Un espacio acogedor para conversar, compartir tu evolución, recibir ánimo y sentir que otras mujeres están caminando contigo.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">💃</div>
+        <h3>Instructores cerca de ti</h3>
+        <p>Orientación, consejos y clases nuevas con instructores para que bailes con más seguridad, ligereza y motivación.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🥗</div>
+        <h3>Dieta ligera acompañada</h3>
+        <p>Sugerencias sencillas de alimentación, recetas y sustituciones para adelgazar sin dietas locas y sin pasar hambre.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🔥</div>
+        <h3>Retos con apoyo</h3>
+        <p>Retos mensuales para el abdomen, la energía y la constancia — con incentivo para que no abandones a mitad de camino.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">📲</div>
+        <h3>Check-ins semanales</h3>
+        <p>Momentos de seguimiento para revisar tu semana, ajustar tu rutina y seguir avanzando a tu propio ritmo.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">🎥</div>
+        <h3>Clases en vivo</h3>
+        <p>Encuentros especiales para bailar juntas, motivarte y sentir que de verdad hay alguien acompañando tu evolución.</p>
+      </div>
+      <div class="card">
+        <div class="emoji">💖</div>
+        <h3>Acogimiento emocional</h3>
+        <p>Motivación, autoestima y apoyo para que vuelvas a sentirte bonita, ligera, segura y cuidada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deserve">
+  <div class="container">
+    <div>
+      <h2>Mereces un lugar que cuide de ti</h2>
+      <p>Muchas mujeres desisten porque intentan cargar con todo solas. El Club Mujer Ligera VIP fue creado para que tengas acogimiento, motivación y un ambiente femenino que te incentive a continuar.</p>
+    </div>
+    <div class="checklist">
+      <h3>En tu primer mes</h3>
+      <ul>
+        <li><span class="check">✓</span> Grupo VIP reservado para compartir experiencias, dudas y evolución.</li>
+        <li><span class="check">✓</span> Contacto con instructores para recibir dirección y sentirte más segura en las clases.</li>
+        <li><span class="check">✓</span> Plan de alimentación ligera con recetas, sustituciones e ideas anti-hinchazón.</li>
+        <li><span class="check">✓</span> Check-in semanal para mantener el foco, la motivación y la constancia.</li>
+        <li><span class="check">✓</span> Reto guiado del mes para que no pierdas el ritmo y sigas evolucionando.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="container">
+    <h2 class="section-title">¿Por qué entrar ahora?</h2>
+    <p class="section-sub">La diferencia entre intentarlo sola y tener un espacio que te sostiene.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card bad">
+        <h3>😔 SOLA</h3>
+        <p>Intentas organizarte, pero cuando llega el desánimo, la duda o la falta de rutina, es más fácil dejarlo para después.</p>
+      </div>
+      <div class="compare-card good">
+        <h3>💖 EN EL CLUB VIP</h3>
+        <p>Tienes a otras mujeres, instructores, rutina guiada, alimentación ligera y check-ins semanales para seguir sintiéndote apoyada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <span class="price-tag">⚡ Un precio por tiempo limitado</span>
+    <h2>Entra hoy al Club Mujer Ligera VIP</h2>
+    <p>Un espacio VIP femenino con clases en vivo, comunidad, rutina ligera, acompañamiento y motivación para continuar tu transformación sin sentirte sola.</p>
+    <a class="cta-btn" href="https://checkout.payt.com.br" target="_blank" rel="noopener">Quiero mi acceso VIP →</a>
+    <div class="trust-row" style="margin-top:26px;">
+      <span>🔒 Seguro</span>
+      <span>✅ Cancela cuando quieras</span>
+      <span>⚡ Acceso inmediato</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Club Mujer Ligera VIP — Espacio exclusivo para miembros.</p>
+  <p>Este contenido no sustituye orientación médica o nutricional profesional.</p>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://checkout.payt.com.br" target="_blank" rel="noopener">Quiero mi acceso VIP →</a>
+</div>
+
+</body>
+</html>
